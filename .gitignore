@@ -1,0 +1,29 @@
+# Python
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Variables de entorno
+.env
+**/.env
+
+# IDE
+.vscode/
+.idea/
+
+# Archivos de DeepFace
+uploads/
+**/uploads/
+
+# React Native
+node_modules/
+**/node_modules/
+
+# Expo
+.expo/
+**/.expo/
+
+# Logs
+*.log
