@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Time
+from sqlalchemy.orm import relationship
 from app.db.connection import Base
 
 class Horario(Base):
@@ -8,3 +9,5 @@ class Horario(Base):
     nombre = Column(String(100), nullable=False)
     hora_entrada = Column(Time, nullable=False)
     hora_salida = Column(Time, nullable=False)
+    usuarios = relationship("Usuario", back_populates="horario")
+    tolerancia_minutos = Column(Integer, nullable=False, default=10)

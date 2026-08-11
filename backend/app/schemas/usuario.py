@@ -57,4 +57,4 @@ class UsuarioResponse(BaseModel):
     activo: bool
     area_id: int
     horario_id: int
-    rostro_path: str | None = None
+    foto_rostro: str | None = None

@@ -1,7 +1,9 @@
 venv/
+.env
 __pycache__/
 *.pyc
-.env
-.vscode/
-.idea/
-uploads/
+
+fotos_subidas/jetas/
+fotos_subidas/temporales/
+
+.deepface/

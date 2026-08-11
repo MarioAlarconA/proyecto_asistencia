@@ -12,7 +12,7 @@ class Usuario(Base):
     username = Column(String(100), nullable=False, unique=True, index=True)
     password_hash = Column(String(255), nullable=False)
     rol = Column(String(20), nullable=False, default="usuario")
-    activo = Column(Boolean, nullable=False, default=True)
+    activo = Column(Boolean, default=True)
     area_id = Column(
         Integer,
         ForeignKey("areas.id"),
@@ -27,12 +27,17 @@ class Usuario(Base):
         String(255),
         nullable=True
     )
+    foto_rostro = Column(
+        String(255),
+        nullable=True
+    )
     area = relationship(
         "Area",
         back_populates="usuarios"
     )
     horario = relationship(
-        "Horario"
+        "Horario",
+        back_populates="usuarios"
     )
     asistencias = relationship(
         "Asistencia",
@@ -42,3 +47,4 @@ class Usuario(Base):
         "Permiso",
         back_populates="usuario"
     )
+    

@@ -1,11 +1,15 @@
-from sqlalchemy import Column, Integer, Date, Time, String, ForeignKey
+from sqlalchemy import Column, Integer, String, Date, Time, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db.connection import Base
 
 class Asistencia(Base):
     __tablename__ = "asistencias"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(
+        Integer,
+        primary_key=True,
+        index=True
+    )
     usuario_id = Column(
         Integer,
         ForeignKey("usuarios.id"),
@@ -24,14 +28,12 @@ class Asistencia(Base):
         nullable=True
     )
     estado = Column(
-        String(30),
-        nullable=False,
-        default="presente"
+        String(50),
+        nullable=True
     )
     metodo = Column(
-        String(30),
-        nullable=False,
-        default="facial"
+        String(50),
+        nullable=True
     )
     usuario = relationship(
         "Usuario",

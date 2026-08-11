@@ -7,6 +7,10 @@ from app.models.usuario import Usuario
 from app.models.asistencia import Asistencia
 from app.models.permiso import Permiso
 from app.routes.usuarios import router as usuarios_router
+from app.routes.auth import router as auth_router
+from app.routes.horarios import router as horarios_router
+from app.routes.permisos import router as permisos_router
+from app.routes.asistencias import router as asistencias_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -17,6 +21,10 @@ app = FastAPI(
 )
 
 app.include_router(usuarios_router)
+app.include_router(auth_router)
+app.include_router(horarios_router)
+app.include_router(permisos_router)
+app.include_router(asistencias_router)
 
 @app.get("/")
 def inicio():
